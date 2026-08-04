@@ -13,6 +13,14 @@ export default function Favorites() {
     setFavorites(data);
   }
 
+  async function deleteFavorite(id) {
+  await fetch(`http://localhost:3000/api/favorites/${id}`, {
+    method: "DELETE",
+  });
+
+  getFavorites();
+}
+
   return (
     <div>
       <h1>Favorites</h1>
@@ -28,6 +36,11 @@ export default function Favorites() {
           />
 
           <p>{favorite.date}</p>
+
+          <button onClick={() => deleteFavorite(favorite._id)}>
+  Delete
+</button>
+
         </div>
       ))}
     </div>
