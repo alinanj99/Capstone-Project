@@ -13,6 +13,16 @@ router.post("/", async (req, res) => {
   res.json(favorite);
 });
 
+router.put("/:id", async (req, res) => {
+  const favorite = await Favorite.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    { new: true }
+  );
+
+  res.json(favorite);
+});
+
 router.delete("/:id", async (req, res) => {
   await Favorite.findByIdAndDelete(req.params.id);
   res.json("Deleted");

@@ -9,17 +9,28 @@ export default function Favorites() {
 
   async function getFavorites() {
     const response = await fetch("http://localhost:3000/api/favorites");
-    const data = await response.json();
-    setFavorites(data);
+    setFavorites(await response.json());
+  }
+
+  async function updateNote(id) {
+    const note = prompt("Note");
+
+    await fetch(`http://localhost:3000/api/favorites/${id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ note }),
+    });
+
+    getFavorites();
   }
 
   async function deleteFavorite(id) {
-  await fetch(`http://localhost:3000/api/favorites/${id}`, {
-    method: "DELETE",
-  });
+    await fetch(`http://localhost:3000/api/favorites/${id}`, {
+      method: "DELETE",
+    });
 
-  getFavorites();
-}
+    getFavorites();
+  }
 
   return (
     <div>
@@ -29,18 +40,17 @@ export default function Favorites() {
         <div key={favorite._id}>
           <h3>{favorite.title}</h3>
 
-          <img
-            src={favorite.url}
-            alt={favorite.title}
-            width="300"
-          />
+          <img src={favorite.url} alt={favorite.title} width="300" />
 
-          <p>{favorite.date}</p>
+          <p>{favorite.note}</p>
+
+          <button onClick={() => updateNote(favorite._id)}>
+            Note
+          </button>
 
           <button onClick={() => deleteFavorite(favorite._id)}>
-  Delete
-</button>
-
+            Delete
+          </button>
         </div>
       ))}
     </div>
