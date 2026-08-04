@@ -4,7 +4,7 @@ const favoriteSchema = new mongoose.Schema(
   {
     title: String,
     date: String,
-    imageUrl: String,
+    url: String,
     explanation: String,
     note: {
       type: String,
