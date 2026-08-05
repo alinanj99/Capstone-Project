@@ -13,11 +13,11 @@ export default function Dashboard() {
     setFavorites(data);
   }
 
-  return (
-    <div>
-      <h1>Dashboard</h1>
-      <h2>Total Favorites</h2>
-      <p>{favorites.length}</p>
-    </div>
-  );
+return (
+  <div>
+    <h1>Dashboard</h1>
+
+    <p>Total Favorites: {favorites.length}</p>
+  </div>
+);
 }

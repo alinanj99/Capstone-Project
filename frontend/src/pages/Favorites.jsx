@@ -40,17 +40,17 @@ export default function Favorites() {
         <div key={favorite._id}>
           <h3>{favorite.title}</h3>
 
-          <img src={favorite.url} alt={favorite.title} width="300" />
+          {favorite.media_type === "video" ? (
+            <iframe src={favorite.url} title={favorite.title} width="500" height="300" />
+          ) : (
+            <img src={favorite.url} alt={favorite.title} width="500" />
+          )}
 
           <p>{favorite.note}</p>
 
-          <button onClick={() => updateNote(favorite._id)}>
-            Note
-          </button>
+          <button onClick={() => updateNote(favorite._id)}>Note</button>
 
-          <button onClick={() => deleteFavorite(favorite._id)}>
-            Delete
-          </button>
+          <button onClick={() => deleteFavorite(favorite._id)}>Delete</button>
         </div>
       ))}
     </div>
