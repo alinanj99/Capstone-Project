@@ -4,19 +4,21 @@ export default function Home() {
   const [spaceData, setSpaceData] = useState({});
   const [date, setDate] = useState("");
   const [aiExplanation, setAiExplanation] = useState("");
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     getSpaceData();
   }, []);
 
   async function getSpaceData() {
-    let url = "http://localhost:3000/api/nasa/apod";
+  let url = "http://localhost:3000/api/nasa/apod";
 
-    if (date) url += `?date=${date}`;
+  if (date) url += `?date=${date}`;
 
-    const response = await fetch(url);
-    setSpaceData(await response.json());
-  }
+  const response = await fetch(url);
+  setSpaceData(await response.json());
+  setAiExplanation("");
+}
 
   async function saveFavorite() {
     await fetch("http://localhost:3000/api/favorites", {
@@ -29,16 +31,21 @@ export default function Home() {
   }
 
 async function aiExplain() {
+  setLoading(true);
+
   const response = await fetch("http://localhost:3000/api/ai/explain", {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: {
+      "Content-Type": "application/json",
+    },
     body: JSON.stringify({
       explanation: spaceData.explanation,
     }),
   });
 
-  const data = await response.json();
-  setAiExplanation(data.explanation);
+  setAiExplanation((await response.json()).explanation);
+
+  setLoading(false);
 }
 
   return (
@@ -62,8 +69,8 @@ async function aiExplain() {
 
       <p>{spaceData.explanation}</p>
 
-<button onClick={aiExplain}>
-  AI Explain
+<button onClick={aiExplain} disabled={loading}>
+  {loading ? "Loading..." : "AI Explain"}
 </button>
 
 <p>{aiExplanation}</p>
