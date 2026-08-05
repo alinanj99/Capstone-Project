@@ -7,11 +7,14 @@ export default function Navbar() {
     <header>
       <img src={logo} alt="Nova" width="180" />
 
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/favorites">Favorites</Link>
-        <Link to="/dashboard">Dashboard</Link>
-      </nav>
+     <nav>
+  <Link to="/">Home</Link>
+  <Link to="/about">About</Link>
+  <Link to="/favorites">Favorites</Link>
+  <Link to="/ai-insights">AI Insights</Link>
+  <Link to="/contact">Contact</Link>
+    </nav> 
+
     </header>
   );
 }
