@@ -1,13 +1,17 @@
 import { Link } from "react-router-dom";
+import logo from "../assets/logo.png";
+import "./Navbar.css";
 
 export default function Navbar() {
   return (
-    <nav>
-      <h2>Nova</h2>
+    <header>
+      <img src={logo} alt="Nova" width="180" />
 
-      <Link to="/">Home</Link>{" "}
-      <Link to="/favorites">Favorites</Link>
-      <Link to="/dashboard">Dashboard</Link>
-    </nav>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/favorites">Favorites</Link>
+        <Link to="/dashboard">Dashboard</Link>
+      </nav>
+    </header>
   );
 }

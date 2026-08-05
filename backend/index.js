@@ -4,6 +4,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import nasaRoutes from "./routes/nasaRoutes.js";
 import favoriteRoutes from "./routes/favoriteRoutes.js";
+import aiRoutes from "./routes/aiRoutes.js";
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ mongoose.connect(process.env.MONGODB_URI);
 
 app.use("/api/nasa", nasaRoutes);
 app.use("/api/favorites", favoriteRoutes);
+app.use("/api/ai", aiRoutes);
 
 app.get("/", (req, res) => {
   res.send("Nova API is running");

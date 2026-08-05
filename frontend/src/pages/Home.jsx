@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 export default function Home() {
   const [spaceData, setSpaceData] = useState({});
   const [date, setDate] = useState("");
+  const [aiExplanation, setAiExplanation] = useState("");
 
   useEffect(() => {
     getSpaceData();
@@ -27,9 +28,22 @@ export default function Home() {
     alert("Saved!");
   }
 
+async function aiExplain() {
+  const response = await fetch("http://localhost:3000/api/ai/explain", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      explanation: spaceData.explanation,
+    }),
+  });
+
+  const data = await response.json();
+  setAiExplanation(data.explanation);
+}
+
   return (
     <div>
-      <h1>Nova</h1>
+      <h2>Discover the Universe</h2>
 
       <input
         type="date"
@@ -48,7 +62,16 @@ export default function Home() {
 
       <p>{spaceData.explanation}</p>
 
-      <button onClick={saveFavorite}>Save Favorite</button>
+<button onClick={aiExplain}>
+  AI Explain
+</button>
+
+<p>{aiExplanation}</p>
+
+<button onClick={saveFavorite}>
+  Save Favorite
+</button>
+
     </div>
   );
 }
