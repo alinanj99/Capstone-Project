@@ -3,12 +3,11 @@ export default function AIInsights() {
     <div>
       <h1>AI Insights</h1>
 
-      <p>
-        Nova uses Gemini AI to explain NASA's Astronomy Picture of the Day in simple English.
-      </p>
+      <p className="intro">
+  Nova uses Gemini AI to explain NASA's Astronomy Picture of the Day in simple English.
+</p>
 
-
-      <h2>How to use</h2>
+<h2>How to Use</h2>
 
 <p>Go to Home.</p>
 <p>Select a date.</p>

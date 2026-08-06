@@ -69,15 +69,17 @@ async function aiExplain() {
 
       <p>{spaceData.explanation}</p>
 
-<button onClick={aiExplain} disabled={loading}>
-  {loading ? "Loading..." : "AI Explain"}
-</button>
+<div className="button-group">
+  <button onClick={aiExplain} disabled={loading}>
+    {loading ? "Loading..." : "AI Explain"}
+  </button>
+
+  <button onClick={saveFavorite}>
+    Save Favorite
+  </button>
+</div>
 
 <p>{aiExplanation}</p>
-
-<button onClick={saveFavorite}>
-  Save Favorite
-</button>
 
     </main>
   );

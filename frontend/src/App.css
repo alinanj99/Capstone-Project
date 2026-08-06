@@ -1,42 +1,66 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #f5f7fb;
+  background: #f5f7fb;
   color: #222;
 }
 
 main {
-  max-width: 1000px;
-  margin: 30px auto;
-  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 10px 20px;
 }
 
 h1,
 h2,
 h3 {
-  color: #1f3c88;
+  color: #233f8f;
 }
 
+h1 {
+  font-size: 40px;
+  margin: 0 0 30px;
+}
+
+h2 {
+  margin-top: 35px;
+  margin-bottom: 20px;
+}
+
+p {
+  line-height: 1.7;
+  margin: 10px 0;
+}
+
+
 button {
-  background-color: #3157d5;
-  color: white;
-  border: none;
-  padding: 10px 18px;
+  padding: 12px 26px;
   margin: 8px 5px;
+  border: none;
   border-radius: 6px;
+  background: #233f8f;
+  color: white;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #2447b8;
+  background: #233f8f;
+}
+
+button:disabled {
+  background: #999;
+  cursor: not-allowed;
 }
 
 input,
 textarea {
-  padding: 10px;
-  margin: 8px 0;
+  width: 420px;
+  padding: 11px;
+  margin: 12px 0;
   border: 1px solid #ccc;
-  border-radius: 6px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 18px;
 }
 
 img {
@@ -52,22 +76,43 @@ iframe {
   border-radius: 10px;
 }
 
-p {
-  line-height: 1.6;
+form {
+  max-width: 550px;
+  margin: 0 auto;
 }
 
-.card {
-  max-width: 500px;
-  margin: 20px auto;
-  padding: 20px;
-  background: white;
-  border-radius: 10px;
-}
-
-.card input,
-.card textarea {
+form input,
+form textarea {
   width: 100%;
-  margin-bottom: 12px;
-  padding: 10px;
+  padding: 14px;
+  font-size: 18px;
   box-sizing: border-box;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.button-group button {
+  min-width: 180px;
+}
+
+.intro {
+  margin-bottom: 40px;
+}
+
+footer {
+  margin-top: 60px;
+  padding: 25px;
+  text-align: center;
+  border-top: 1px solid #ddd;
+  color: #666;
+  font-size: 14px;
+}
+
+footer p {
+  margin: 6px 0;
 }

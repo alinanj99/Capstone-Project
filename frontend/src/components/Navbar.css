@@ -1,3 +1,5 @@
+
+
 header {
   max-width: 1200px;
   margin: 0 auto;
@@ -20,7 +22,7 @@ nav {
 
 nav a {
   text-decoration: none;
-  color: #333;
+  color: #233f8f;
   font-size: 22px;
   font-weight: bold;
 }
@@ -33,7 +35,7 @@ nav a {
 
 .auth a {
   text-decoration: none;
-  color: #333;
+  color: #233f8f;;
   font-size: 18px;
   font-weight: 600;
 }
