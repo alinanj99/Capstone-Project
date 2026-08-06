@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import nasaRoutes from "./routes/nasaRoutes.js";
 import favoriteRoutes from "./routes/favoriteRoutes.js";
 import aiRoutes from "./routes/aiRoutes.js";
+import authRoutes from "./routes/authRoutes.js";
 
 dotenv.config();
 
@@ -18,6 +19,7 @@ mongoose.connect(process.env.MONGODB_URI);
 app.use("/api/nasa", nasaRoutes);
 app.use("/api/favorites", favoriteRoutes);
 app.use("/api/ai", aiRoutes);
+app.use("/api/auth", authRoutes);
 
 app.get("/", (req, res) => {
   res.send("Nova API is running");
