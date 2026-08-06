@@ -5,7 +5,7 @@ export default function Login() {
   const [password, setPassword] = useState("");
 
   async function login() {
-    const response = await fetch("http://localhost:3000/api/auth/login", {
+    const response = await fetch("https://capstone-project-6qdz.onrender.com/api/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

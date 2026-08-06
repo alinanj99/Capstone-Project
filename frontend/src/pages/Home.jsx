@@ -11,7 +11,7 @@ export default function Home() {
   }, []);
 
   async function getSpaceData() {
-  let url = "http://localhost:3000/api/nasa/apod";
+  let url = "https://capstone-project-6qdz.onrender.com/api/nasa/apod";
 
   if (date) url += `?date=${date}`;
 
@@ -21,7 +21,7 @@ export default function Home() {
 }
 
   async function saveFavorite() {
-    await fetch("http://localhost:3000/api/favorites", {
+    await fetch("https://capstone-project-6qdz.onrender.com/api/favorites", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(spaceData),
@@ -33,7 +33,7 @@ export default function Home() {
 async function aiExplain() {
   setLoading(true);
 
-  const response = await fetch("http://localhost:3000/api/ai/explain", {
+  const response = await fetch("https://capstone-project-6qdz.onrender.com/api/ai/explain", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

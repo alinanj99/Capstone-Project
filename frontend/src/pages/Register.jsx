@@ -6,7 +6,7 @@ export default function Register() {
   const [password, setPassword] = useState("");
 
   async function register() {
-    await fetch("http://localhost:3000/api/auth/register", {
+    await fetch("https://capstone-project-6qdz.onrender.com/api/auth/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

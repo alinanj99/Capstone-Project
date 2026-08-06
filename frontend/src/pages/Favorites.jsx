@@ -8,14 +8,14 @@ export default function Favorites() {
   }, []);
 
   async function getFavorites() {
-    const response = await fetch("http://localhost:3000/api/favorites");
+    const response = await fetch("https://capstone-project-6qdz.onrender.com/api/favorites")
     setFavorites(await response.json());
   }
 
   async function updateNote(id) {
     const note = prompt("Note");
 
-    await fetch(`http://localhost:3000/api/favorites/${id}`, {
+    await fetch(`https://capstone-project-6qdz.onrender.com/api/favorites/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ note }),
@@ -25,7 +25,7 @@ export default function Favorites() {
   }
 
   async function deleteFavorite(id) {
-    await fetch(`http://localhost:3000/api/favorites/${id}`, {
+    await fetch(`https://capstone-project-6qdz.onrender.com/api/favorites/${id}`, {
       method: "DELETE",
     });
 
