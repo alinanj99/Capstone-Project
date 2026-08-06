@@ -33,7 +33,7 @@ export default function Favorites() {
   }
 
   return (
-    <div>
+    <main>
       <h1>Favorites</h1>
 
       {favorites.map((favorite) => (
@@ -41,9 +41,9 @@ export default function Favorites() {
           <h3>{favorite.title}</h3>
 
           {favorite.media_type === "video" ? (
-            <iframe src={favorite.url} title={favorite.title} width="500" height="300" />
+            <iframe src={favorite.url} title={favorite.title} width="650" height="400" />
           ) : (
-            <img src={favorite.url} alt={favorite.title} width="500" />
+            <img src={favorite.url} alt={favorite.title} width="650" />
           )}
 
           <p>{favorite.note}</p>
@@ -53,6 +53,6 @@ export default function Favorites() {
           <button onClick={() => deleteFavorite(favorite._id)}>Delete</button>
         </div>
       ))}
-    </div>
+   </main>
   );
 }

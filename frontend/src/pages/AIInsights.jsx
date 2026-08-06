@@ -7,6 +7,7 @@ export default function AIInsights() {
         Nova uses Gemini AI to explain NASA's Astronomy Picture of the Day in simple English.
       </p>
 
+
       <h2>How to use</h2>
 
 <p>Go to Home.</p>

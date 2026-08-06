@@ -1,21 +1,45 @@
+import { useState } from "react";
+
 export default function Contact() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    alert("Message sent!");
+    setName("");
+    setEmail("");
+    setMessage("");
+  }
+
   return (
-    <div>
-      <h1>Contact</h1>
+    <main>
+      <h1> Contact</h1>
 
-      <input placeholder="Name" />
-      <br />
-      <br />
+      <form className="card" onSubmit={handleSubmit}>
+        <input
+          placeholder="Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
 
-      <input placeholder="Email" />
-      <br />
-      <br />
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
 
-      <textarea placeholder="Message"></textarea>
-      <br />
-      <br />
+        <textarea
+          placeholder="Message"
+          rows="4"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+        />
 
-      <button>Send</button>
-    </div>
+        <button type="submit">Send</button>
+      </form>
+    </main>
   );
 }

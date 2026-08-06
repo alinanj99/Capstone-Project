@@ -49,7 +49,7 @@ async function aiExplain() {
 }
 
   return (
-    <div>
+  <main>
       <h2>Discover the Universe</h2>
 
       <input
@@ -79,6 +79,6 @@ async function aiExplain() {
   Save Favorite
 </button>
 
-    </div>
+    </main>
   );
 }
