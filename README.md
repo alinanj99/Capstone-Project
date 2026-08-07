@@ -38,7 +38,7 @@ Nova Explorer is a full-stack MERN application that lets users explore NASA's As
 - User registration
 - User login
 
-## Live Demo
+## Deployment Links
 
 Frontend:  
 https://nova-explorer.netlify.app
@@ -52,5 +52,4 @@ https://capstone-project-6qdz.onrender.com
 - Add user profile page
 - Show personalized favorites for each user
 - Improve the user interface
-
 
