@@ -53,3 +53,4 @@ https://capstone-project-6qdz.onrender.com
 - Show personalized favorites for each user
 - Improve the user interface
 
+
