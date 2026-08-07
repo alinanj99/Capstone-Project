@@ -1,8 +1,8 @@
-# Nova Explorer
+# Nova 
 
 ## Description
 
-Nova Explorer is a full-stack MERN application that lets users explore NASA's Astronomy Picture of the Day. Users can search by date, save their favorite astronomy images or videos, generate AI-powered explanations using Google Gemini, and create an account to register and log in.
+Nova is a full-stack MERN application that lets users explore NASA's Astronomy Picture of the Day. Users can search by date, save their favorite astronomy images or videos, generate AI-powered explanations using Google Gemini, and create an account to register and log in.
 
 ## Technologies Used
 
